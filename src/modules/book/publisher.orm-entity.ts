@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ObjectID, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Book } from './book.orm-entity';
 
 @Entity()

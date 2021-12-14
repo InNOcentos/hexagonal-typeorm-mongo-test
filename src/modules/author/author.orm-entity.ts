@@ -1,16 +1,10 @@
-import {
-  Column,
-  Entity,
-  JoinTable,
-  ManyToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, ObjectID, ObjectIdColumn, PrimaryGeneratedColumn } from 'typeorm';
 import { Book } from '../book/book.orm-entity';
 
 @Entity()
 export class Author {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @ObjectIdColumn()
+  id: ObjectID;
 
   @Column()
   name: string;

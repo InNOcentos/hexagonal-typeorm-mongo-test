@@ -1,4 +1,5 @@
 import { IsArray, IsNotEmpty, IsSemVer, IsString } from 'class-validator';
+import { Book } from 'src/modules/book/book.orm-entity';
 
 export class CreateAuthorDto {
   @IsNotEmpty()
@@ -6,5 +7,5 @@ export class CreateAuthorDto {
   name: string;
 
   @IsArray()
-  books: [] | string[];
+  books: Book[];
 }

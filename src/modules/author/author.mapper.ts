@@ -4,10 +4,14 @@ import { Author } from './author.orm-entity';
 import { CreateAuthorDto } from './dto/create-author.dto';
 
 export class AuthorMapper {
-  static mapToOrmEntity(author: AuthorEntity) {
+  static mapToOrmEntity(createAuthorDto: CreateAuthorDto) {
     const authorOrmEntity = new Author();
-    authorOrmEntity.name = author.name;
-    authorOrmEntity.books = author.books;
+    console.log(authorOrmEntity);
+    authorOrmEntity.name = createAuthorDto.name;
+    authorOrmEntity.books = createAuthorDto.books;
     return authorOrmEntity;
+  }
+  static mapToDomain(author: Author) {
+    return new AuthorEntity(author.name, author.books);
   }
 }
